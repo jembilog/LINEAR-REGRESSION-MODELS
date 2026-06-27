@@ -21,6 +21,7 @@ for epoch in range(epochs):
     w = w - learning_rate * dw
     b = b - learning_rate * db
 
+    #optional, too look at what is happening every iterations
     print(
         f"Epoch : {epoch+1} | "
         f"MSE : {mse:.4f} | "
@@ -42,12 +43,14 @@ print(f"R2 : {r2:.4f}")
 
 fig ,(ax1, ax2) = plt.subplots(1,2, figsize=(12,5))
 
+#plot for MSE 
 ax1.plot(mse_history, color='magenta', label='MSE VALUE')
 ax1.set_title("Error Minimization History")
 ax1.set_xlabel("Epochs")
 ax1.set_ylabel("Loss")
 ax1.grid(True)
 
+#plot for regression model
 ax2.scatter(X , Y, color='blue', label='Data Coordinates')
 X_range = np.linspace(min(X) -1, max(X)+2, 100)
 Y_range = w * X_range +  b
