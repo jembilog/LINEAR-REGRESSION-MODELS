@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 
 X = np.array([30,50,70,90,120])
 Y = np.array([50000,70000,90000,120000,150000])
+
+#i need to scale this cuz it is too large or you can just use smaller values cuz it affects mse when iterating large data
 X_max = np.max(X)
 Y_max = np.max(Y)
 
